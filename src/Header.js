@@ -4,7 +4,7 @@ export default class Header extends Component {
   render() {
     return (
       <div className="header">
-        <h1 className="header__title"> Food Finder </h1>
+        <h1 className="header__title"> <div className="container">Food Finder</div> </h1>
         <div className="header__search">
             <form className="search-form" >
                 <select className="search-option" name="search-option">

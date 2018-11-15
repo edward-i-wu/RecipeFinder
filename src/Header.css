@@ -14,13 +14,18 @@
   -webkit-box-shadow: 2px 3px 3px 0px black;
           box-shadow: 2px 3px 3px 0px black;
   color: #eeff00;
-  letter-spacing: 1em;
   background-image: url("/Images/background-board-chillies-1435895.jpg");
   background-size: cover;
-  line-height: 29vh;
   margin: 0;
-  padding-top: 12%;
-  padding-left: 10%;
+  padding-top: 40%;
+  position: relative;
+}
+
+.header__title .container {
+  position: absolute;
+  letter-spacing: 3px;
+  bottom: 10%;
+  left: 36%;
 }
 
 .search-form {
