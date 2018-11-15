@@ -1,0 +1,46 @@
+$header-direction:column;
+
+.header{
+    display:flex;
+    flex-direction: $header-direction;
+    height: 30vh;
+
+    &__title{
+        border-bottom: 1px solid black;
+        box-shadow: 2px 3px 3px 0px black;
+        color:rgb(238, 255, 0);
+        letter-spacing: 1em;
+    
+        background-image: url('/Images/background-board-chillies-1435895.jpg');
+        background-size: cover;
+        line-height:29vh;
+        margin:0;
+        padding-top:12%;
+        padding-left:10%;
+        
+    }
+
+    &__search{
+        
+    }
+}
+
+.search{
+    &-form{
+        display:flex;
+        flex-direction: $header-direction;
+        height:13vh;
+        justify-content: space-between;
+    
+        &__bar{
+
+        }
+    }
+    &-option{
+        width: 40%;
+        margin:auto;
+    }
+}
+
+
+

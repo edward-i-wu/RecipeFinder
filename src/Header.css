@@ -1,0 +1,44 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 30vh;
+}
+
+.header__title {
+  border-bottom: 1px solid black;
+  -webkit-box-shadow: 2px 3px 3px 0px black;
+          box-shadow: 2px 3px 3px 0px black;
+  color: #eeff00;
+  letter-spacing: 1em;
+  background-image: url("/Images/background-board-chillies-1435895.jpg");
+  background-size: cover;
+  line-height: 29vh;
+  margin: 0;
+  padding-top: 12%;
+  padding-left: 10%;
+}
+
+.search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 13vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.search-option {
+  width: 40%;
+  margin: auto;
+}
+/*# sourceMappingURL=Header.css.map */
