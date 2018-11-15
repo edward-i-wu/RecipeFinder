@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom
 import ResultPage from './ResultPage';
 
 const baseURL= 'https://www.food2fork.com';
-const api_key = '23d6944200f9e7cf3c2e3c139d8a57b2';
+const api_key = '6ee4ea36eef2846253f19ed524b601ed';
 const search = '/api/search?key=';
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
         <Header searchFunc={this.submitForm}></Header> 
         <Router> 
           <Switch>
-            <Route path='/recipeId' render={()=>{return <ResultPage></ResultPage>}} />
+            <Route path='/:recipeId' render={(props)=>{return <ResultPage {...props}></ResultPage>}} />
             <Route path='/' render={()=>{return <Results recipes={this.state.recipes}/>}} />
           </Switch>
         </Router>

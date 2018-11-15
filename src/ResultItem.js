@@ -8,7 +8,7 @@ export default class ResultItem extends Component {
     let {result:item} =this.props;
     return (
       <div className="result">
-        <Link to={`/${item.recipe_id}`}> <img className="result__image" src={item.image_url}></img> </Link>
+        <Link to={{pathname: `/${item.recipe_id}`, state:{source_url: item.source_url}}}> <img className="result__image" src={item.image_url}></img> </Link>
         <div className="result__title">{item.title}</div>
         <div className="result__publisher">{item.publisher}</div>
         <div className="result__social">{item.social_rank}</div>
