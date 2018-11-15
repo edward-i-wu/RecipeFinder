@@ -40,6 +40,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background-color: lightgrey;
 }
 
 .search-option {

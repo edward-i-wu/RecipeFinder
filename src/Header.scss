@@ -4,6 +4,7 @@ $header-direction:column;
     display:flex;
     flex-direction: $header-direction;
     height: 30vh;
+    
 
     &__title{
         border-bottom: 1px solid black;
@@ -36,6 +37,7 @@ $header-direction:column;
         flex-direction: $header-direction;
         height:13vh;
         justify-content: space-between;
+        background-color: lightgrey;
     
         &__bar{
 
