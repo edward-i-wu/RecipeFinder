@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const bodyParser= require('body-parser');
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 const fs = require('fs');
 
 app.use(bodyParser.json({type:'application/json'}));
