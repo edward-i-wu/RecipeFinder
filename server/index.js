@@ -17,6 +17,7 @@ app.use(bodyParser.json({type:'application/json'}));
 app.use(express.urlencoded({extended:false}));
 
 
+
 app.all('/*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -24,9 +25,9 @@ app.all('/*', function(req, res, next) {
    res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
+// app.use(express.static('public'));
 
-
-
+app.use(express.static(__dirname + '/public'));
 
 const baseURL= 'https://www.food2fork.com';
 const api_key = '6ee4ea36eef2846253f19ed524b601ed';
@@ -45,18 +46,23 @@ app.post('/upload', (req, res)=>{
     
     //get json data
     //also need to store filename with json data
-    upload.mv(`./server/Images/${name}`,function(err) {
+    upload.mv(`./public/${name}`,function(err) {
         if (err) {
           console.log(err);
           return res.status(500).send(err);
         }
         req.body.fileName = name;
+        req.body.image_url = `http://localhost:8080/${name}`;
         recipeBase.push(req.body);
+        //add image url
+        
         console.log(recipeBase);
 
         //rewrite to json
         let content = JSON.stringify(recipeBase);
-        fs.writeFile('./server/recipes.json',content,(err) => {
+      
+        
+        fs.writeFile('./recipes.json',content,(err) => {
             if (err) throw err;
             console.log('The file has been saved!');
         });
@@ -81,5 +87,7 @@ app.get('/search/:searchWord',(req,res)=>{
     //respond with the filtered array 
     res.json(jsonRecipes)
 })
+//return image 
+
 
 app.listen(8080,()=>{console.log('server running on 8080')});
