@@ -66,4 +66,20 @@ app.post('/upload', (req, res)=>{
     });
 });
 
+app.get('/search/:searchWord',(req,res)=>{
+    let terms= req.params.searchWord;
+    let termsArray = terms.split(' ');
+    
+    let jsonRecipes = require('./recipes.json');
+    //loop through each search term 
+    for(let i =0; i<termsArray.length; i++){
+        //search json here
+        let item = termsArray[i];
+        jsonRecipes= jsonRecipes.filter(recipe=>{return recipe.ingredients.includes(item)})
+    }
+
+    //respond with the filtered array 
+    res.json(jsonRecipes)
+})
+
 app.listen(8080,()=>{console.log('server running on 8080')});

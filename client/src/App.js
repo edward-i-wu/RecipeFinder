@@ -8,7 +8,8 @@ import ResultPage from './ResultPage';
 import Upload from './Upload';
 
 const baseURL= 'https://www.food2fork.com';
-const api_key = '6ee4ea36eef2846253f19ed524b601ed';
+// const api_key = '6ee4ea36eef2846253f19ed524b601ed';
+const api_key ='23d6944200f9e7cf3c2e3c139d8a57b2';
 const search = '/api/search?key=';
 
 class App extends Component {
@@ -18,6 +19,8 @@ class App extends Component {
     super(props);
     this.searchTerms = React.createRef();
   }
+
+  state={recipes:[]};
   submitForm = (e)=>{
     //fetch search here 
     e.preventDefault();
@@ -28,12 +31,22 @@ class App extends Component {
     let query = this.searchTerms.current.value.replace(',','%20')
     fetch(`${baseURL}${search}${api_key}&q=${query}`).then(res=>res.json())
         .then(data =>{
-          this.setState(data);
-        })
+          if(data.recipes){
+          console.log(data.recipes);
+          this.setState((prevState,props)=>{
+            return {recipes:prevState.recipes.concat(data.recipes)}
+          });
+        }});
+    //search our own server endpoint
+    fetch(`http://localhost:8080/search/${query}`).then(res=>res.json())
+        .then(res=>this.setState((prevState,props)=>{
+          
+         return {recipes: prevState.recipes.concat(res)}
+        }));
     
   }
 
-  state = {recipes:[]}
+ 
   
   render() {
     return (
