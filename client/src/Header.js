@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './Header.css';
-export default class Header extends Component {
-  
+class Header extends Component {
+    
+
     render() {
 
     return (
@@ -14,7 +15,8 @@ export default class Header extends Component {
                     <option> Trending</option>
                 </select>  
                 <div className='search-form__bar'>
-                    <input type="text" name="ingredients"></input>
+                    {/* use the ref passed from the parent  */}
+                    <input ref={this.props.childRef} type="text" name="ingredients"></input>
                     <button type="submit" > Search </button>
                 </div>
             </form>
@@ -23,3 +25,5 @@ export default class Header extends Component {
     )
   }
 }
+
+export default React.forwardRef((props,ref)=>{return <Header childRef={ref} {...props}></Header>});

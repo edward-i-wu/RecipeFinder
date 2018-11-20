@@ -12,10 +12,21 @@ const api_key = '6ee4ea36eef2846253f19ed524b601ed';
 const search = '/api/search?key=';
 
 class App extends Component {
+
+
+  constructor(props){
+    super(props);
+    this.searchTerms = React.createRef();
+  }
   submitForm = (e)=>{
     //fetch search here 
     e.preventDefault();
-    fetch(`${baseURL}${search}${api_key}`).then(res=>res.json())
+    //still need to format paramters 
+
+    console.log(this.searchTerms.current.value);
+    //change string to query
+    let query = this.searchTerms.current.value.replace(',','%20')
+    fetch(`${baseURL}${search}${api_key}&q=${query}`).then(res=>res.json())
         .then(data =>{
           this.setState(data);
         })
@@ -27,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header searchFunc={this.submitForm}></Header> 
+        <Header ref={this.searchTerms} searchFunc={this.submitForm}></Header> 
         <Router> 
           <Switch>
           <Route path='/upload' component={Upload} />           
