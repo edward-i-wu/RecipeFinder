@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ResultItem.css';
 import {Link} from 'react-router-dom';
+import Popup from 'reactjs-popup';
 
 export default class ResultItem extends Component {
   
@@ -12,6 +13,10 @@ export default class ResultItem extends Component {
         <div className="result__title">{item.title}</div>
         <div className="result__publisher">{item.publisher}</div>
         <div className="result__social">{item.social_rank}</div>
+        <Popup trigger={<button> Trigger</button>} position='top center'>
+          <div>{item.ingredients}</div>
+          <div>{item.instructions}</div>
+        </Popup>
       </div>
     )
   }

@@ -20,13 +20,27 @@ class App extends Component {
     this.searchTerms = React.createRef();
   }
 
+ 
+
+  //try to include default results 
   state={recipes:[]};
+
+  componentDidMount(){
+    fetch(`${baseURL}${search}${api_key}`).then(res=>res.json())
+        .then(data =>{
+          if(data.recipes){
+          console.log(data.recipes);
+          this.setState((prevState,props)=>{
+            return {recipes:prevState.recipes.concat(data.recipes)}
+          });
+        }});
+
+  }
   submitForm = (e)=>{
     //fetch search here 
     e.preventDefault();
     //still need to format paramters 
-
-    console.log(this.searchTerms.current.value);
+    this.setState({recipes:[]});
     //change string to query
     let query = this.searchTerms.current.value.replace(',','%20')
     fetch(`${baseURL}${search}${api_key}&q=${query}`).then(res=>res.json())
@@ -43,7 +57,7 @@ class App extends Component {
           
          return {recipes: prevState.recipes.concat(res)}
         }));
-    
+
   }
 
  
@@ -51,14 +65,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header ref={this.searchTerms} searchFunc={this.submitForm}></Header> 
         <Router> 
+        <div>
+          <Header ref={this.searchTerms} searchFunc={this.submitForm}></Header> 
           <Switch>
           <Route path='/upload' component={Upload} />           
              <Route path='/:recipeId'  render={(props)=>{return <ResultPage {...props}></ResultPage>}} />
             
             <Route path='/' exact render={()=>{return <Results recipes={this.state.recipes}/>}} />
           </Switch>
+          </div>
         </Router>
       </div>
     );

@@ -28,6 +28,23 @@
   left: 36%;
 }
 
+.header__search {
+  position: relative;
+}
+
+.header__search .links {
+  position: absolute;
+  top: 0;
+  left: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__search .links .upload {
+  margin-left: 2em;
+}
+
 .search-form {
   display: -webkit-box;
   display: -ms-flexbox;

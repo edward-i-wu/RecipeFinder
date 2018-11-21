@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Header.css';
+import {Link} from 'react-router-dom';
 class Header extends Component {
     
 
@@ -9,6 +10,10 @@ class Header extends Component {
       <div className="header">
         <h1 className="header__title"> <div className="container">Food Finder</div> </h1>
         <div className="header__search">
+            <div className='links'>
+                <Link to='/'> <div className='home'>HOME</div> </Link>
+                <Link to='/upload'> <div className='upload'>Upload</div> </Link>
+            </div>           
             <form className="search-form" onSubmit={this.props.searchFunc}>
                 <select className="search-option" name="search-option">
                     <option>Top Rated</option>

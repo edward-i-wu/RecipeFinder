@@ -27,8 +27,18 @@ $header-direction:column;
     }
 
     &__search{
-        
+        position:relative;
+        .links{
+            position :absolute; 
+            top:0;
+            left:2em;
+            display:flex;
+            .upload{
+                margin-left:2em;
+            }
+        }
     }
+
 }
 
 .search{
