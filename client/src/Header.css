@@ -88,4 +88,14 @@
   width: 40%;
   margin: auto;
 }
+
+.iframePopup {
+  width: 100%;
+  height: 100%;
+}
+
+.iframePopup iframe {
+  width: 100%;
+  height: 100%;
+}
 /*# sourceMappingURL=Header.css.map */
