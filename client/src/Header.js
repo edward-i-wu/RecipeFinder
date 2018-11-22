@@ -8,17 +8,17 @@ class Header extends Component {
 
     return (
       <div className="header">
-        <h1 className="header__title"> <div className="container">Food Finder</div> </h1>
+        <h1 className="header__title">Food Finder</h1>
         <div className="header__search">
             <div className='links'>
                 <Link to='/'> <div className='home'>HOME</div> </Link>
                 <Link to='/upload'> <div className='upload'>Upload</div> </Link>
             </div>           
             <form className="search-form" onSubmit={this.props.searchFunc}>
-                <select className="search-option" name="search-option">
+                {/* <select className="search-option" name="search-option">
                     <option>Top Rated</option>
                     <option> Trending</option>
-                </select>  
+                </select>   */}
                 <div className='search-form__bar'>
                     {/* use the ref passed from the parent  */}
                     <input ref={this.props.childRef} type="text" name="ingredients"></input>

@@ -8,8 +8,8 @@ import ResultPage from './ResultPage';
 import Upload from './Upload';
 
 const baseURL= 'https://www.food2fork.com';
-// const api_key = '6ee4ea36eef2846253f19ed524b601ed';
-const api_key ='23d6944200f9e7cf3c2e3c139d8a57b2';
+const api_key = '6ee4ea36eef2846253f19ed524b601ed';
+// const api_key ='23d6944200f9e7cf3c2e3c139d8a57b2';
 const search = '/api/search?key=';
 
 class App extends Component {

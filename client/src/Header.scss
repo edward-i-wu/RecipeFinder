@@ -3,38 +3,37 @@ $header-direction:column;
 .header{
     display:flex;
     flex-direction: $header-direction;
-    height: 30vh;
-    
+    background-image: url(/Images/background-board-chillies-1435895.jpg);
+    background-size: cover;
 
     &__title{
-        border-bottom: 1px solid black;
-        box-shadow: 2px 3px 3px 0px black;
-        color:rgb(238, 255, 0);
-        
-        background-image: url('/Images/background-board-chillies-1435895.jpg');
-        background-size: cover;
-        margin:0;
-        padding-top:40%;
-        position:relative;
-        .container{
-            position:absolute;
-            letter-spacing:3px;
-            bottom:10%;
-            left:36%;
+      
+        color: #eeff00;
+        font-size: 8vw;
+        margin-left: 2.5rem;
 
+        .container{
+            letter-spacing:3px;
         }
         
     }
 
     &__search{
-        position:relative;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        font-size: 6vw;
+
         .links{
-            position :absolute; 
-            top:0;
-            left:2em;
-            display:flex;
+            display: flex;
+            justify-content: flex-end;
+            
+            & a{
+                text-decoration: none;
+                margin:2rem;
+
+            }
             .upload{
-                margin-left:2em;
             }
         }
     }
@@ -43,14 +42,31 @@ $header-direction:column;
 
 .search{
     &-form{
-        display:flex;
-        flex-direction: $header-direction;
-        height:13vh;
-        justify-content: space-between;
-        background-color: lightgrey;
-    
+        display: flex;
+        justify-content: flex-end;
+        margin: 1rem;
+        
         &__bar{
+            display: flex;
+            align-items: flex-end;
 
+            & input{
+                border: 2px solid darkorange;
+                width: 50vw;
+                height:5vh;
+
+            }
+
+            & button{
+                background: darkorange;
+                border: none;
+                height: 6vh;
+                width: 22vw;
+                padding: 0 0.5rem;
+                font-weight: bold;
+                color: white;
+                font-size: 18px;
+            }
         }
     }
     &-option{
@@ -58,6 +74,5 @@ $header-direction:column;
         margin:auto;
     }
 }
-
 
 

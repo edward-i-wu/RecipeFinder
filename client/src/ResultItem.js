@@ -13,7 +13,7 @@ export default class ResultItem extends Component {
         <div className="result__title">{item.title}</div>
         <div className="result__publisher">{item.publisher}</div>
         <div className="result__social">{item.social_rank}</div>
-        <Popup trigger={<button> Trigger</button>} position='top center'>
+        <Popup trigger={<button className="result__button"> See Recipe</button>} position='top center'>
           <div>{item.ingredients}</div>
           <div>{item.instructions}</div>
         </Popup>
