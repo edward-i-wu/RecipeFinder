@@ -12,7 +12,7 @@ export default class ResultItem extends Component {
     
     if(!item.source_url){
       
-      popupDisplay=(<div> 
+      popupDisplay=(<div className='iframePopup'> 
                     <div>{item.ingredients}</div>
                     <div>{item.instructions}</div>
                   </div>)
@@ -27,7 +27,7 @@ export default class ResultItem extends Component {
         <div className="result__title">{item.title}</div>
         <div className="result__publisher">{item.publisher}</div>
         <div className="result__social">{item.social_rank}</div>
-        <Popup trigger={<button className="result__button"> See Recipe</button>} position='top center'>
+        <Popup id='popup' trigger={<button className="result__button"> See Recipe</button>} position='top center'>
           {popupDisplay}
         </Popup>
       </div>

@@ -49,4 +49,14 @@
   color: aliceblue;
   font-weight: bold;
 }
+
+.popup-content {
+  width: 50%;
+  height: auto;
+}
+
+.popup-content .iframePopup {
+  width: 500%;
+  height: 100vh;
+}
 /*# sourceMappingURL=ResultItem.css.map */

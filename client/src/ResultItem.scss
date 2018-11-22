@@ -44,4 +44,12 @@ $info-margin:.4em;
         font-weight: bold;      
     }
 }
+.popup-content{
+    width:50%;
+    height:auto;
+    .iframePopup{
+        width:500%;
+        height:100vh;
 
+    }
+}
