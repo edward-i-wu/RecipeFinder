@@ -69,8 +69,8 @@ class App extends Component {
         <div>
           <Header ref={this.searchTerms} searchFunc={this.submitForm}></Header> 
           <Switch>
-          <Route path='/upload' component={Upload} />           
-             <Route path='/:recipeId'  render={(props)=>{return <ResultPage {...props}></ResultPage>}} />
+            <Route path='/upload' component={Upload} />           
+            <Route path='/:recipeId'  render={(props)=>{return <ResultPage {...props}></ResultPage>}} />
             
             <Route path='/' exact render={()=>{return <Results recipes={this.state.recipes}/>}} />
           </Switch>

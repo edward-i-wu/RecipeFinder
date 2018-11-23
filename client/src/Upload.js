@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Upload.css';
+import {Redirect} from 'react-router-dom';
 
 export default class Upload extends Component {
 
@@ -10,7 +11,10 @@ export default class Upload extends Component {
         this.instructions = React.createRef();
         this.image = React.createRef();
     }
-
+state={redirect:false}
+componentDidMount(){
+    this.setState({redirect:false});
+}
 submitForm= (e)=>{
     e.preventDefault();
     var formData = new FormData();
@@ -26,14 +30,23 @@ submitForm= (e)=>{
         //                         image:this.image.current.fileInput }),
         body: formData
     }
-    fetch('http://localhost:8080/upload',init).then(res=> console.log(res))
-        //.then(res2=>console.log(res2))
+    fetch('http://localhost:8080/upload',init).then(res=>
+    { console.log(res);
+      this.setState({redirect:true})  })
+      //.then(res2=>console.log(res2))
         .catch(err => console.log(err));
+     
 }  
+
+renderRedirect=()=>{
+    if(this.state.redirect)
+        {return <Redirect to='/'/>}
+}
   
 render() {
     return (
       <div className='upload-container'>
+      {this.renderRedirect()}
         <form onSubmit={this.submitForm}>
            <label > Title <input ref={this.title} name="Title"></input> </label>
            <label > Ingredients <textarea ref={this.ingredients} name="Ingredient"></textarea> </label>
