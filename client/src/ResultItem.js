@@ -12,7 +12,7 @@ export default class ResultItem extends Component {
     
     if(!item.source_url){
       
-      popupDisplay=(<div className='iframePopup'> 
+      popupDisplay=(<div className='ingredientPopup'> 
                     <div>{item.ingredients}</div>
                     <div>{item.instructions}</div>
                   </div>)

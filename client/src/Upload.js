@@ -49,7 +49,7 @@ render() {
       {this.renderRedirect()}
         <form onSubmit={this.submitForm}>
            <label > Title <input ref={this.title} name="Title"></input> </label>
-           <label > Ingredients <textarea ref={this.ingredients} name="Ingredient"></textarea> </label>
+           <label > Ingredients <textarea ref={this.ingredients} className="upload_ingredients" name="Ingredient"></textarea> </label>
            <label> Instructions <textarea className="upload__instruction" ref={this.instructions} name="Instructions"></textarea> </label>
            <label>Image Upload <input className="upload__img" name='image' ref={this.image} type='file'></input></label>
            <button type="submit"> Submit your recipe! </button>

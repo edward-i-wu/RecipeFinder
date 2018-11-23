@@ -63,5 +63,10 @@
 .upload__instruction {
   width: 50vw;
   height: 50vh;
+  white-space: pre-wrap;
+}
+
+.upload__ingredients {
+  white-space: pre-wrap;
 }
 /*# sourceMappingURL=Upload.css.map */

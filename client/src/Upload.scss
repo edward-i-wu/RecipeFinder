@@ -55,5 +55,9 @@ form{
     &__instruction{
         width:50vw;
         height:50vh;
+        white-space: pre-wrap;
+    }
+    &__ingredients{ 
+        white-space: pre-wrap;
     }
 }
